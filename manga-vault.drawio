@@ -1,0 +1,172 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:132.0) Gecko/20100101 Firefox/132.0" version="24.9.0">
+  <diagram name="Page-1" id="CsN2DtvMr3goEj1-GDi9">
+    <mxGraphModel dx="2157" dy="866" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="HtQSewwXfFbixGyJDhGC-1" value="Book" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="150" y="170" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-2" value="Series" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="620" y="170" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-3" value="Title" style="ellipse;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-5" value="Author" style="ellipse;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="750" y="50" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-6" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="HtQSewwXfFbixGyJDhGC-3" target="HtQSewwXfFbixGyJDhGC-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="290" as="sourcePoint" />
+            <mxPoint x="220" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-8" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="HtQSewwXfFbixGyJDhGC-9" target="HtQSewwXfFbixGyJDhGC-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="200" y="280" as="sourcePoint" />
+            <mxPoint x="360" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-9" value="ISBN-13" style="ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=4;" vertex="1" parent="1">
+          <mxGeometry x="120" y="90" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-10" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="HtQSewwXfFbixGyJDhGC-5" target="HtQSewwXfFbixGyJDhGC-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="140" as="sourcePoint" />
+            <mxPoint x="130" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-11" value="Relationship" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="390" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-12" value="Title" style="ellipse;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="520" y="50" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-13" value="" style="endArrow=none;html=1;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0.2;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="HtQSewwXfFbixGyJDhGC-12" target="HtQSewwXfFbixGyJDhGC-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="570" y="210" as="sourcePoint" />
+            <mxPoint x="640" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-14" value="Volume" style="ellipse;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="180" y="30" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-15" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="HtQSewwXfFbixGyJDhGC-14" target="HtQSewwXfFbixGyJDhGC-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="140" as="sourcePoint" />
+            <mxPoint x="230" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-16" value="&lt;u&gt;SeriesID&lt;/u&gt;" style="ellipse;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="630" y="50" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-17" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="HtQSewwXfFbixGyJDhGC-16" target="HtQSewwXfFbixGyJDhGC-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="545" y="214" as="sourcePoint" />
+            <mxPoint x="590" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-18" value="User" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-260" y="170" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-19" value="UserID" style="ellipse;whiteSpace=wrap;html=1;align=center;fontStyle=4;" vertex="1" parent="1">
+          <mxGeometry x="-330" y="90" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-21" value="&lt;u&gt;Username&lt;/u&gt;" style="ellipse;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-190" y="90" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-23" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="HtQSewwXfFbixGyJDhGC-19" target="HtQSewwXfFbixGyJDhGC-18">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="70" y="480" as="sourcePoint" />
+            <mxPoint x="35" y="570" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-24" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="HtQSewwXfFbixGyJDhGC-21" target="HtQSewwXfFbixGyJDhGC-18">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="80" y="490" as="sourcePoint" />
+            <mxPoint x="110" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-27" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="510" y="189.62" as="sourcePoint" />
+            <mxPoint x="560" y="190" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="620" y="190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-28" value="1" style="resizable=0;html=1;whiteSpace=wrap;align=right;verticalAlign=bottom;" connectable="0" vertex="1" parent="HtQSewwXfFbixGyJDhGC-27">
+          <mxGeometry x="1" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-29" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HtQSewwXfFbixGyJDhGC-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="189.62" as="sourcePoint" />
+            <mxPoint x="390" y="189.62" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-30" value="M" style="resizable=0;html=1;whiteSpace=wrap;align=right;verticalAlign=bottom;" connectable="0" vertex="1" parent="HtQSewwXfFbixGyJDhGC-29">
+          <mxGeometry x="1" relative="1" as="geometry">
+            <mxPoint x="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-34" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HtQSewwXfFbixGyJDhGC-36" target="HtQSewwXfFbixGyJDhGC-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="240" y="300" as="sourcePoint" />
+            <mxPoint x="335" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-35" value="M" style="resizable=0;html=1;whiteSpace=wrap;align=right;verticalAlign=bottom;" connectable="0" vertex="1" parent="HtQSewwXfFbixGyJDhGC-34">
+          <mxGeometry x="1" relative="1" as="geometry">
+            <mxPoint x="-20" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-36" value="Collection" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-80" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-38" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="HtQSewwXfFbixGyJDhGC-18" target="HtQSewwXfFbixGyJDhGC-36">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="209.62" y="440" as="sourcePoint" />
+            <mxPoint x="209.62" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-39" value="M" style="resizable=0;html=1;whiteSpace=wrap;align=right;verticalAlign=bottom;" connectable="0" vertex="1" parent="HtQSewwXfFbixGyJDhGC-38">
+          <mxGeometry x="1" relative="1" as="geometry">
+            <mxPoint x="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-40" value="&lt;div align=&quot;left&quot;&gt;Create table Series(&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Title varchar(255) Not Null,&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;SeriesID Int Not Null,&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Author varchar(255) Not Null,&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Primary Key(SeriesID),&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;unique(Title, Author)&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;)&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-375" y="500" width="210" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-41" value="&lt;div align=&quot;left&quot;&gt;Create table Book(&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;BookID Int Not Null&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Title varchar(255) Not Null,&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;ISBN_13 char(13) Not Null,&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Volume Int Not Null,&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Author varchar(255) Not Null,&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;SeriesID Int Not Null,&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Foreign Key(SeriesID) references Series(SeriesID)&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Foreign Key(Author) references Series(Author)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Primary Key(BookID)&#x9;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;Unique&lt;/span&gt; key(ISBN_13)&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;)&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-375" y="630" width="320" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-42" value="Author" style="ellipse;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="310" y="30" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-43" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="HtQSewwXfFbixGyJDhGC-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="365" y="70" as="sourcePoint" />
+            <mxPoint x="260" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-44" value="&lt;u&gt;BookID&lt;/u&gt;" style="ellipse;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="250" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-45" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="HtQSewwXfFbixGyJDhGC-44" target="HtQSewwXfFbixGyJDhGC-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="375" y="80" as="sourcePoint" />
+            <mxPoint x="260" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-46" value="&lt;div align=&quot;left&quot;&gt;Create table User(&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;UserID Int Not Null,&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Username varchar(255) Not Null,&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Primary Key(UserID),&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Unique(Username)&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;)&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-375" y="283" width="230" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HtQSewwXfFbixGyJDhGC-47" value="&lt;div align=&quot;left&quot;&gt;Create table Collection(&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;UserID Int Not Null,&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;BookID Int Not Null,&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Foreign Key(UserID) references User(UserID),&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Foreign Key(BookID) references Book(BookID),&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;Unique(UserID, BookID)&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;)&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-375" y="383" width="300" height="110" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
