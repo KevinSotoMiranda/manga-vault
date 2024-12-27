@@ -16,6 +16,26 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
+    public User getUserById(Long userId) {
+        Optional<User> userOptional = this.userRepository.findById(userId);
+
+        if(!userOptional.isPresent()) {
+            throw new IllegalStateException(String.format("User not found with id: %d", userId)); // TODO: Create custom exceptions
+        }
+
+        return userOptional.get();
+    }
+
+    public User getUserByUsername(String username) {
+        Optional<User> userOptional = this.userRepository.findByUsername(username);
+
+        if(!userOptional.isPresent()) {
+            throw new IllegalStateException(String.format("User not found with username: %s", username)); // TODO: Create custom exceptions
+        }
+
+        return userOptional.get();
+    }
+
     public List<User> getUsers() {
         return this.userRepository.findAll();
     }
@@ -27,9 +47,7 @@ public class UserService {
             throw new IllegalStateException("Username has been taken already"); // TODO: Create custom exceptions
         }
 
-        User createdUser = this.userRepository.save(user);
-            
-        return createdUser;
+        return this.userRepository.save(user);            
     }
 
     public User updatedUser(Long userId, User user) {
