@@ -4,10 +4,12 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.example.mangavault.series.Series;
 import com.example.mangavault.series.SeriesRepository;
 
+@Service
 public class BookService {
 
     private final BookRepository bookRepository;
@@ -20,7 +22,7 @@ public class BookService {
     }
 
     public Book createBook(Book book) {
-        Optional<Book> bookOptional = this.bookRepository.findByIsbn_13(book.getIsbn_13());
+        Optional<Book> bookOptional = this.bookRepository.findByIsbn13(book.getIsbn13());
         
         if(bookOptional.isPresent()) {
             throw new IllegalStateException("Book already exists"); // TODO: Create custom exceptions

@@ -6,17 +6,32 @@ import jakarta.persistence.*;
 @Table(name = "books")
 public class Book {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "book_sequence")
+    @SequenceGenerator(name = "book_sequence", sequenceName = "book_sequence", allocationSize = 1)
     private Long id;
     private String title;
     private String author;
-    private String isbn_13;
+
+    private String isbn13;
+
     private int volume;
     private Long series_id;
 
-    public Book(String title, String author, String isbn_13, int volume, Long series_id, Long id) {
+    public Book() {
+    }
+
+    public Book(String title, String author, String isbn13, int volume, Long series_id) {
         this.title = title;
         this.author = author;
-        this.isbn_13 = isbn_13;
+        this.isbn13 = isbn13;
+        this.volume = volume;
+        this.series_id = series_id;
+    }
+
+    public Book(String title, String author, String isbn13, int volume, Long series_id, Long id) {
+        this.title = title;
+        this.author = author;
+        this.isbn13 = isbn13;
         this.volume = volume;
         this.series_id = series_id;
         this.id = id;
@@ -30,8 +45,8 @@ public class Book {
         return author;
     }
 
-    public String getIsbn_13() {
-        return isbn_13;
+    public String getIsbn13() {
+        return isbn13;
     }
 
     public int getVolume() {
@@ -54,8 +69,8 @@ public class Book {
         this.author = author;
     }
 
-    public void setIsbn_13(String isbn_13) {
-        this.isbn_13 = isbn_13;
+    public void setIsbn_13(String isbn13) {
+        this.isbn13 = isbn13;
     }
 
     public void setVolume(int volume) {
@@ -75,7 +90,7 @@ public class Book {
         return "Book{" +
                 "title='" + title + '\'' +
                 ", author='" + author + '\'' +
-                ", isbn_13='" + isbn_13 + '\'' +
+                ", isbn13='" + isbn13 + '\'' +
                 ", volume=" + volume +
                 ", series_id=" + series_id +
                 ", id=" + id +
