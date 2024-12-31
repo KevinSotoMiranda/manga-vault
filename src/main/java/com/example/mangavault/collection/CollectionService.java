@@ -25,10 +25,6 @@ public class CollectionService {
         this.bookRepository = bookRepository;
     }
 
-    public List<Collection> getCollections() {
-        return this.collectionRepository.findAll();
-    }
-
     public Collection createCollection(Collection collection) {
         Optional<Collection> collectionOptional = this.collectionRepository.findByUserIdAndBookId(collection.getUserId(), collection.getBookId());
 
@@ -46,6 +42,10 @@ public class CollectionService {
         }
 
         return this.collectionRepository.save(collection);
+    }
+
+    public List<Collection> getCollections() {
+        return this.collectionRepository.findAll();
     }
 
     public void updateCollection(Long collectionId, Collection collection) {
