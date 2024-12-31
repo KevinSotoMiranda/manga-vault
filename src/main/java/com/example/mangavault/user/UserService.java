@@ -16,6 +16,20 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
+    public User createUser(User user) {
+        Optional<User> userOptional = this.userRepository.findByUsername(user.getUsername());
+
+        if(userOptional.isPresent()) {
+            throw new IllegalStateException("Username has been taken already"); // TODO: Create custom exceptions
+        }
+
+        return this.userRepository.save(user);            
+    }
+
+    public List<User> getUsers() {
+        return this.userRepository.findAll();
+    }
+
     public User getUserById(Long userId) {
         Optional<User> userOptional = this.userRepository.findById(userId);
 
@@ -36,20 +50,6 @@ public class UserService {
         return userOptional.get();
     }
 
-    public List<User> getUsers() {
-        return this.userRepository.findAll();
-    }
-
-    public User createUser(User user) {
-        Optional<User> userOptional = this.userRepository.findByUsername(user.getUsername());
-
-        if(userOptional.isPresent()) {
-            throw new IllegalStateException("Username has been taken already"); // TODO: Create custom exceptions
-        }
-
-        return this.userRepository.save(user);            
-    }
-
     public User updatedUser(Long userId, User user) {
         Optional<User> userOptional = this.userRepository.findById(userId);
         if(!userOptional.isPresent()) {
@@ -63,16 +63,6 @@ public class UserService {
         return this.userRepository.save(existingUser);
     }
 
-    private void validateUsername(String username) {
-        if(username == null || username.length() < 6) {
-            throw new IllegalStateException("Username must be at least 6 characters"); // TODO: Create custom exceptions
-        }
-
-        else if(username.length() > 255) {
-            throw new IllegalStateException("Username must be at most 255 characters"); // TODO: Create custom exceptions
-        }
-    }
-
     public void deleteUser(Long userId) {
         Optional<User> userOptional = this.userRepository.findById(userId);
 
@@ -81,5 +71,15 @@ public class UserService {
         }
 
         this.userRepository.deleteById(userId);
+    }
+
+    private void validateUsername(String username) {
+        if(username == null || username.length() < 6) {
+            throw new IllegalStateException("Username must be at least 6 characters"); // TODO: Create custom exceptions
+        }
+
+        else if(username.length() > 255) {
+            throw new IllegalStateException("Username must be at most 255 characters"); // TODO: Create custom exceptions
+        }
     }
 }

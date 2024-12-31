@@ -30,6 +30,12 @@ public class UserController {
         this.userService = userService;
     }
 
+    @PostMapping
+    public ResponseEntity<User> createUser(@Valid @RequestBody User user) {
+        User createdUser = this.userService.createUser(user);
+        return new ResponseEntity<>(createdUser, HttpStatus.CREATED);
+    }
+
     @GetMapping
     public ResponseEntity<List<User>> getUsers() {
         List<User> users =  this.userService.getUsers();
@@ -46,12 +52,6 @@ public class UserController {
     public ResponseEntity<User> getUserByUsername(@PathVariable("username") String username) {
         User user = this.userService.getUserByUsername(username);
         return ResponseEntity.ok(user);
-    }
-
-    @PostMapping
-    public ResponseEntity<User> createUser(@Valid @RequestBody User user) {
-        User createdUser = this.userService.createUser(user);
-        return new ResponseEntity<>(createdUser, HttpStatus.CREATED);
     }
 
     @PutMapping(path = "{userId}")
