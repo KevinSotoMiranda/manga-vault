@@ -4,9 +4,11 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import com.example.mangavault.book.BookRepository;
+import com.example.mangavault.exception.ApiRequestException;
 import com.example.mangavault.user.UserRepository;
 
 @Service
@@ -30,15 +32,15 @@ public class CollectionService {
 
 
         if(!this.bookRepository.existsById(collection.getBookId())) {
-            throw new IllegalStateException("Book does not exist"); // TODO: Create custom exceptions
+            throw new ApiRequestException("Book does not exist", HttpStatus.NOT_FOUND);
         } 
 
         if(!this.userRepository.existsById(collection.getUserId())) {
-            throw new IllegalStateException("User does not exist"); // TODO: Create custom exceptions
+            throw new ApiRequestException("User does not exist", HttpStatus.NOT_FOUND);
         }
 
         if(collectionOptional.isPresent()) {
-            throw new IllegalStateException("Collection has already been created"); // TODO: Create custom exceptions
+            throw new ApiRequestException("Collection has already been created", HttpStatus.CONFLICT);
         }
 
         return this.collectionRepository.save(collection);
@@ -52,7 +54,7 @@ public class CollectionService {
         Optional<Collection> collectionOptional = this.collectionRepository.findById(collectionId);
 
         if(!collectionOptional.isPresent()) {
-            throw new IllegalStateException(String.format("Collection could not be found with id: %d", collectionId)); // TODO: Create custom exceptions
+            throw new ApiRequestException(String.format("Collection could not be found with id: %d", collectionId), HttpStatus.NOT_FOUND);
         } 
      
         Collection existingCollection = collectionOptional.get();
@@ -66,7 +68,7 @@ public class CollectionService {
         Optional<Collection> collectionOptional = this.collectionRepository.findById(collectionId);
 
         if(!collectionOptional.isPresent()) {
-            throw new IllegalStateException(String.format("Collection could not be found with id: %d", collectionId)); // TODO: Create custom exceptions
+            throw new ApiRequestException(String.format("Collection could not be found with id: %d", collectionId), HttpStatus.NOT_FOUND);
         } 
 
         this.collectionRepository.deleteById(collectionId);
