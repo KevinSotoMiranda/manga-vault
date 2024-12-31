@@ -4,7 +4,10 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+
+import com.example.mangavault.exception.ApiRequestException;
 
 @Service
 public class SeriesService {
@@ -20,7 +23,10 @@ public class SeriesService {
         Optional<Series> seriesOptional = this.seriesRepository.findByTitleAndAuthor(series.getTitle(), series.getAuthor());
 
         if(seriesOptional.isPresent()) {
-            throw new IllegalStateException(String.format("A series exists with the title: %s and author: %s", series.getTitle(), series.getAuthor())); // TODO: Create custom exceptions
+            throw new ApiRequestException(
+                String.format("A series exists with the title: %s and author: %s", series.getTitle(), series.getAuthor()), 
+                HttpStatus.CONFLICT
+            ); 
         }
         
         return this.seriesRepository.save(series);
@@ -34,7 +40,7 @@ public class SeriesService {
         Optional<Series> seriesOptional = this.seriesRepository.findById(seriesId);
         
         if(!seriesOptional.isPresent()) {
-            throw new IllegalStateException(String.format("Series not found with id: %d",seriesId));
+            throw new ApiRequestException(String.format("Series not found with id: %d",seriesId), HttpStatus.NOT_FOUND);
         }
 
         Series existingSeries = seriesOptional.get();
@@ -55,8 +61,8 @@ public class SeriesService {
     public void deleteSeries(Long seriesId) {
         Optional<Series> seriesOptional = this.seriesRepository.findById(seriesId);
 
-        if(seriesOptional.isPresent()) {
-            throw new IllegalStateException(String.format("Series not found with id: %d", seriesId));
+        if(!seriesOptional.isPresent()) {
+            throw new ApiRequestException(String.format("Series not found with id: %d", seriesId), HttpStatus.NOT_FOUND);
         }
 
         this.seriesRepository.deleteById(seriesId);
