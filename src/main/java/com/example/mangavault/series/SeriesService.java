@@ -16,10 +16,6 @@ public class SeriesService {
         this.seriesRepository = seriesRepository;
     }
 
-    public List<Series> getSeries() {
-        return this.seriesRepository.findAll();
-    }
-
     public Series createSeries(Series series) {
         Optional<Series> seriesOptional = this.seriesRepository.findByTitleAndAuthor(series.getTitle(), series.getAuthor());
 
@@ -30,6 +26,10 @@ public class SeriesService {
         return this.seriesRepository.save(series);
     }
 
+    public List<Series> getSeries() {
+        return this.seriesRepository.findAll();
+    }
+    
     public Series updateSeries(Long seriesId, Series series) {
         Optional<Series> seriesOptional = this.seriesRepository.findById(seriesId);
         
