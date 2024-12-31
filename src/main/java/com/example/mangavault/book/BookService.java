@@ -4,8 +4,10 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import com.example.mangavault.exception.ApiRequestException;
 import com.example.mangavault.series.Series;
 import com.example.mangavault.series.SeriesRepository;
 
@@ -25,13 +27,13 @@ public class BookService {
         Optional<Book> bookOptional = this.bookRepository.findByIsbn13(book.getIsbn13());
         
         if(bookOptional.isPresent()) {
-            throw new IllegalStateException("Book already exists"); // TODO: Create custom exceptions
+            throw new ApiRequestException("Book already exists", HttpStatus.CONFLICT); 
         }
 
         Optional<Series> seriesOptional = this.seriesRepository.findById(book.getSeries_id());
         
         if(!seriesOptional.isPresent()) {
-            throw new IllegalStateException("Series does not exist"); // TODO: Create custom exceptions
+            throw new ApiRequestException("Series does not exist", HttpStatus.NOT_FOUND);
         }   
 
         return this.bookRepository.save(book);
@@ -45,13 +47,13 @@ public class BookService {
         Optional<Book> optionalBook = this.bookRepository.findById(bookId);
 
         if(!optionalBook.isPresent()) {
-            throw new IllegalStateException(String.format("Book does not exist with id: %b", bookId)); // TODO: Create custom exceptions
+            throw new ApiRequestException(String.format("Book does not exist with id: %d", bookId), HttpStatus.NOT_FOUND); 
         }
 
         Optional<Series> optionalSeries = this.seriesRepository.findById(book.getSeries_id());
 
         if(!optionalSeries.isPresent()) {
-            throw new IllegalStateException(String.format("Series does not exist with id: %b", book.getSeries_id()));// TODO: Create custom exceptions
+            throw new ApiRequestException(String.format("Series does not exist with id: %d", book.getSeries_id()), HttpStatus.NOT_FOUND);
         } 
 
         return this.bookRepository.save(book);
@@ -61,7 +63,7 @@ public class BookService {
         Optional<Book> optionalBook = this.bookRepository.findById(bookId);
 
         if(!optionalBook.isPresent()) {
-            throw new IllegalStateException(String.format("Book does not exist with id: %b", bookId));// TODO: Create custom exceptions
+            throw new ApiRequestException(String.format("Book does not exist with id: %d", bookId), HttpStatus.NOT_FOUND);
         }
 
         this.bookRepository.deleteById(bookId);
