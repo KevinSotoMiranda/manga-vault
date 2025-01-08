@@ -10,8 +10,6 @@ public class Book {
     @SequenceGenerator(name = "book_sequence", sequenceName = "book_sequence", allocationSize = 1)
     private Long id;
     private String title;
-    private String author;
-
     private String isbn13;
 
     private int volume;
@@ -20,17 +18,15 @@ public class Book {
     public Book() {
     }
 
-    public Book(String title, String author, String isbn13, int volume, Long series_id) {
+    public Book(String title, String isbn13, int volume, Long series_id) {
         this.title = title;
-        this.author = author;
         this.isbn13 = isbn13;
         this.volume = volume;
         this.series_id = series_id;
     }
 
-    public Book(String title, String author, String isbn13, int volume, Long series_id, Long id) {
+    public Book(String title, String isbn13, int volume, Long series_id, Long id) {
         this.title = title;
-        this.author = author;
         this.isbn13 = isbn13;
         this.volume = volume;
         this.series_id = series_id;
@@ -39,10 +35,6 @@ public class Book {
 
     public String getTitle() {
         return title;
-    }
-
-    public String getAuthor() {
-        return author;
     }
 
     public String getIsbn13() {
@@ -65,10 +57,6 @@ public class Book {
         this.title = title;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
     public void setIsbn_13(String isbn13) {
         this.isbn13 = isbn13;
     }
@@ -89,7 +77,6 @@ public class Book {
     public String toString() {
         return "Book{" +
                 "title='" + title + '\'' +
-                ", author='" + author + '\'' +
                 ", isbn13='" + isbn13 + '\'' +
                 ", volume=" + volume +
                 ", series_id=" + series_id +

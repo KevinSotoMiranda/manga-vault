@@ -9,7 +9,7 @@ public class Collection {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "collection_sequence")
     @SequenceGenerator(name = "collection_sequence", sequenceName = "collection_sequence", allocationSize = 1)
-       private Long id;
+    private Long id;
     private Long userId;
     private Long bookId;
 
