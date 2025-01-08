@@ -2,8 +2,10 @@ package com.example.mangavault.user;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
+import lombok.Builder;
 
 @Entity
+@Builder
 @Table(name = "users")
 public class User {
     @Id
@@ -21,7 +23,7 @@ public class User {
         this.username = username;
     }
 
-    public User(String username, Long id) {
+    public User(Long id, String username) {
         this.username = username;
         this.id = id;
     }
