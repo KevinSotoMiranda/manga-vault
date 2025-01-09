@@ -44,16 +44,16 @@ public class UserRepositoryTests {
         List<User> usersSaved = this.userRepository.saveAll(users);
 
         Assertions.assertThat(users).isNotNull();
-        Assertions.assertThat(users.size()).isEqualTo(3);
+        Assertions.assertThat(usersSaved.size()).isEqualTo(3);
 
-        Assertions.assertThat(users.get(0).getId()).isGreaterThan(0);
-        Assertions.assertThat(users.get(0).getUsername()).isEqualTo("happyCats");
+        Assertions.assertThat(usersSaved.get(0).getId()).isGreaterThan(0);
+        Assertions.assertThat(usersSaved.get(0).getUsername()).isEqualTo("happyCats");
 
-        Assertions.assertThat(users.get(1).getId()).isGreaterThan(0);
-        Assertions.assertThat(users.get(1).getUsername()).isEqualTo("oneOther");
+        Assertions.assertThat(usersSaved.get(1).getId()).isGreaterThan(0);
+        Assertions.assertThat(usersSaved.get(1).getUsername()).isEqualTo("oneOther");
 
-        Assertions.assertThat(users.get(2).getId()).isGreaterThan(0);
-        Assertions.assertThat(users.get(2).getUsername()).isEqualTo("SomethingRandom");       
+        Assertions.assertThat(usersSaved.get(2).getId()).isGreaterThan(0);
+        Assertions.assertThat(usersSaved.get(2).getUsername()).isEqualTo("SomethingRandom");       
     }
 
     @Test
