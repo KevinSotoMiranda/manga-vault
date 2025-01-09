@@ -3,9 +3,11 @@ package com.example.mangavault.user;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 import lombok.Builder;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Builder
+@NoArgsConstructor
 @Table(name = "users")
 public class User {
     @Id
@@ -16,16 +18,13 @@ public class User {
     @Size(min = 6, message = "Username must be at least 6 characters long", max = 255)
     private String username;
 
-    public User() {
-    }
-
     public User(String username) {
         this.username = username;
     }
 
-    public User(Long id, String username) {
-        this.username = username;
+    private User(Long id, String username) {
         this.id = id;
+        this.username = username;
     }
 
     public String getUsername() {
@@ -38,10 +37,6 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     @Override

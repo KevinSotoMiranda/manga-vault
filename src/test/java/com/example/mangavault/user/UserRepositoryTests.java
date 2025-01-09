@@ -1,5 +1,7 @@
 package com.example.mangavault.user;
 
+import java.util.List;
+
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,17 +16,85 @@ public class UserRepositoryTests {
     private UserRepository userRepository;
 
     @Test
-    public void UserRepository_Save_ReturnSavedUsers() {
-        // Arrange
+    public void UserRepository_Save_ReturnSavedUser() {
         User user = User.builder()
             .username("someUser").build();
 
-        // Act
         User userSaved = this.userRepository.save(user);
 
-        // Assert
         Assertions.assertThat(userSaved).isNotNull();
         Assertions.assertThat(userSaved.getId()).isGreaterThan(0);
+        Assertions.assertThat(userSaved.getUsername()).isEqualTo("someUser");
     }
     
+    @Test
+    public void UserRepository_SaveAll_ReturnSavedUsers() {
+        List<User> users = List.of(
+            User.builder()
+                .username("happyCats")
+                .build(),
+            User.builder()
+                .username("oneOther")
+                .build(),
+            User.builder()
+                .username("SomethingRandom")
+                .build()
+        );
+            
+        List<User> usersSaved = this.userRepository.saveAll(users);
+
+        Assertions.assertThat(users).isNotNull();
+        Assertions.assertThat(users.size()).isEqualTo(3);
+
+        Assertions.assertThat(users.get(0).getId()).isGreaterThan(0);
+        Assertions.assertThat(users.get(0).getUsername()).isEqualTo("happyCats");
+
+        Assertions.assertThat(users.get(1).getId()).isGreaterThan(0);
+        Assertions.assertThat(users.get(1).getUsername()).isEqualTo("oneOther");
+
+        Assertions.assertThat(users.get(2).getId()).isGreaterThan(0);
+        Assertions.assertThat(users.get(2).getUsername()).isEqualTo("SomethingRandom");       
+    }
+
+    @Test
+    public void UserRepository_DeleteById_ReturnsEmptyOptional() {
+        User user = User.builder()
+            .username("deleteMe")
+            .build();
+
+        User userSaved = this.userRepository.save(user);
+
+        this.userRepository.deleteById(userSaved.getId());
+
+        Assertions.assertThat(this.userRepository.findById(userSaved.getId())).isEmpty();
+    }
+
+    @Test
+    public void UserRepository_DeleteByIds_ReturnsEmptyOptional() {
+        List<User> users = List.of(
+            User.builder()
+            .username("deleteMe")
+            .build(),
+            User.builder()
+            .username("deleteMe2")
+            .build(),
+            User.builder()
+            .username("deleteMe3")
+            .build()
+        );
+
+        List<User> usersSaved = this.userRepository.saveAll(users);
+
+        List<Long> ids = List.of(
+            usersSaved.get(0).getId(),
+            usersSaved.get(1).getId(),
+            usersSaved.get(2).getId()
+        );
+
+        this.userRepository.deleteAllById(ids);
+
+        Assertions.assertThat(this.userRepository.findById(ids.get(0))).isEmpty();
+        Assertions.assertThat(this.userRepository.findById(ids.get(1))).isEmpty();
+        Assertions.assertThat(this.userRepository.findById(ids.get(2))).isEmpty();
+    }
 }
