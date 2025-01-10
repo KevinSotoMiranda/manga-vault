@@ -1,6 +1,7 @@
 package com.example.mangavault.user;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -96,5 +97,18 @@ public class UserRepositoryTests {
         Assertions.assertThat(this.userRepository.findById(ids.get(0))).isEmpty();
         Assertions.assertThat(this.userRepository.findById(ids.get(1))).isEmpty();
         Assertions.assertThat(this.userRepository.findById(ids.get(2))).isEmpty();
+    }
+
+    @Test
+    public void UserRepository_FindByUsername_ReturnsEmptyOptional() {
+        User user = User.builder()
+            .username("findMe")
+            .build();
+        
+        User userSaved = this.userRepository.save(user);
+        Optional<User> userOptional = this.userRepository.findByUsername(user.getUsername()); 
+
+        Assertions.assertThat(userOptional).isNotEmpty();
+        Assertions.assertThat(userSaved.getId()).isEqualTo(userOptional.get().getId());
     }
 }
