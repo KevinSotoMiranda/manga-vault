@@ -71,7 +71,7 @@ public class UserRepositoryTests {
     }
 
     @Test
-    public void UserRepository_DeleteByIds_ReturnsEmptyOptional() {
+    public void UserRepository_DeleteAllById_ReturnsEmptyOptional() {
         List<User> users = List.of(
             User.builder()
             .username("deleteMe")
