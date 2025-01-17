@@ -58,10 +58,14 @@ public class CollectionService {
         } 
      
         Collection existingCollection = collectionOptional.get();
-        existingCollection.setBookId(collection.getBookId());
-        existingCollection.setUserId(collection.getUserId());
 
-        this.collectionRepository.save(existingCollection);
+        Collection updatedCollection = Collection.builder()
+            .id(existingCollection.getId())
+            .userId(existingCollection.getUserId())
+            .bookId(existingCollection.getBookId())
+            .build();
+
+        this.collectionRepository.save(updatedCollection);
     }
 
     public void deleteCollection(Long collectionId) {

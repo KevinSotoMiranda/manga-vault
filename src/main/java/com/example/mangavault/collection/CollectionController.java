@@ -14,9 +14,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-
-
-
 @RestController
 @RequestMapping(path = "api/v1/collections")
 public class CollectionController {
@@ -50,5 +47,4 @@ public class CollectionController {
     public void deleteCollection(@PathVariable("collectionId") Long collectionId) {
         this.collectionService.deleteCollection(collectionId);
     } 
-    
 }

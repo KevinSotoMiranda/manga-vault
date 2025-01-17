@@ -128,7 +128,5 @@ public class SeriesRepositoryTests {
         Assertions.assertThat(seriesOptional.get().getId()).isEqualTo(seriesSaved.getId());
         Assertions.assertThat(seriesOptional.get().getAuthor()).isEqualTo(seriesSaved.getAuthor());
         Assertions.assertThat(seriesOptional.get().getTitle()).isEqualTo(seriesSaved.getTitle());
-
     }
-
 }
