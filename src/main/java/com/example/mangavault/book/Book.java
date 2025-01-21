@@ -14,10 +14,12 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "book_sequence")
     @SequenceGenerator(name = "book_sequence", sequenceName = "book_sequence", allocationSize = 1)
+    @Column(name = "book_id")
     private Long id;
 
     private String title;
 
+    @Column(name = "isbn_13")
     private String isbn13;
 
     private int volume;
