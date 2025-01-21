@@ -1,8 +1,10 @@
 package com.example.mangavault.book;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 
 @Entity
+@Builder
 @Table(name = "books")
 public class Book {
     @Id
@@ -25,7 +27,7 @@ public class Book {
         this.series_id = series_id;
     }
 
-    public Book(String title, String isbn13, int volume, Long series_id, Long id) {
+    public Book(Long id, String title, String isbn13, int volume, Long series_id) {
         this.title = title;
         this.isbn13 = isbn13;
         this.volume = volume;
