@@ -53,7 +53,7 @@ public class UserService {
         return userOptional.get();
     }
 
-    public User updatedUser(Long userId, User user) {
+    public User updateUser(Long userId, User user) {
         Optional<User> userOptional = this.userRepository.findById(userId);
 
         if(!userOptional.isPresent()) {
