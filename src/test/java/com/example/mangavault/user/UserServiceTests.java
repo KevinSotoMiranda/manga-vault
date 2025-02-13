@@ -87,13 +87,61 @@ public class UserServiceTests {
 
     @Test
     public void UserService_getUserById_ReturnsUsers() {
+        User user = User.builder()
+            .username("null")
+            .build();
 
+        Optional<User> userOptional = Optional.of(user);
+
+        Long userId = 4L;
+        when(userRepository.findById(userId)).thenReturn(userOptional);
+
+        User userFound = this.userService.getUserById(userId);
+
+        Assertions.assertThat(userFound.getUsername()).isEqualTo(user.getUsername());
     }
 
+    @Test
+    public void UserService_GetUserById_ThrowsApiRequestException() {
+        Long userId = 5L;
+
+        when(userRepository.findById((userId))).thenReturn(Optional.empty());
+
+        ApiRequestException exception = assertThrows(ApiRequestException.class, () -> {
+            userService.getUserById(userId);
+        });
+
+        Assertions.assertThat(exception.getMessage()).isEqualTo(String.format("User not found with id: %d", userId));
+        Assertions.assertThat(exception.geHttpStatus()).isEqualTo(HttpStatus.NOT_FOUND);
+    }
     
     @Test
-    public void UserService_getUserByUsername_() {
+    public void UserService_getUserByUsername_ReturnsUser() {
+        User user = User.builder()
+            .username("TheuserName")
+            .build();
 
+        Optional<User> userOptional = Optional.of(user);
+
+        when(userRepository.findByUsername(user.getUsername())).thenReturn(userOptional);
+        
+        User userFound = this.userService.getUserByUsername(user.getUsername());
+
+        Assertions.assertThat(userFound.getUsername()).isEqualTo(user.getUsername());
+    }
+
+    @Test
+    public void UserService_GetUserByUsername_ThrowsApiRequestException() {
+        String username = "SomeUserNmae";
+
+        when(userRepository.findByUsername(username)).thenReturn(Optional.empty());
+
+        ApiRequestException exception = assertThrows(ApiRequestException.class, () -> {
+            userService.getUserByUsername(username);
+        });
+
+        Assertions.assertThat(exception.getMessage()).isEqualTo(String.format("User not found with username: %s", username));
+        Assertions.assertThat(exception.geHttpStatus()).isEqualTo(HttpStatus.NOT_FOUND);
     }
 
     @Test
